@@ -33,8 +33,6 @@ public class SupplierServiceApplication {
 				phones,
 				foods
 		));
-
-
 		productRepository.saveAll(List.of(
 				new Product("BMW", "The best Germany Cars", 800,cars),
 				new Product("Mercedes", "The most beautiful Germany cars", 100, cars),

@@ -34,7 +34,7 @@ public class ProductController {
             @RequestParam(name = "category", required = false) String category,
             @RequestParam(value = "page", required = false) Integer pageNumber,
             @RequestParam(value = "size", required = false) Integer pageSize) {
-        return ResponseEntity.ok(productService.findAll(minPrice, maxPrice, category, pageNumber, pageSize)); //200
+        return ResponseEntity.ok(productService.findAll(minPrice, maxPrice, category, pageNumber, pageSize));
     }
 
     @GetMapping("/{id}")

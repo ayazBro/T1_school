@@ -25,8 +25,11 @@ public class ProductService {
     public Page<Product> findAll(Integer minPrice, Integer maxPrice, String category,
                                  Integer pageNumber, Integer pageSize) {
 
-        Pageable paging = (pageNumber == null || pageSize == null)
-                ? Pageable.unpaged() : PageRequest.of(pageNumber, pageSize);
+        Pageable paging;
+        if(pageNumber == null || pageSize == null)
+            paging=Pageable.unpaged();
+        else
+            paging=PageRequest.of(pageNumber, pageSize);
         Specification<Product> spec = Specification.where(null);
 
         if (minPrice != null) {
